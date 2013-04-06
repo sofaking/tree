@@ -9,22 +9,22 @@ class Tree
   end
 
   def print_top_section
-    print_triangle(0, @height - 1)
+    print_trapezoid(0, @height - 1)
   end
 
   def print_middle_section
-    print_triangle(1, @height)
+    print_trapezoid(1, @height)
   end
 
   def print_lower_section
-    print_triangle(2, @height + 1)
+    print_trapezoid(2, @height + 1)
   end
 
   def print_stem
     1.upto(@height) { |i| puts spaces(@center - (@height > 2 ? 1 : 0)) + stars(@height > 2 ? 3 : 1) }
   end
 
-  def print_triangle(up_size, down_size)
+  def print_trapezoid(up_size, down_size)
     up_size.upto(down_size) { |i| puts spaces(@center - i) + stars(1 + (i * 2)) }
   end
 
